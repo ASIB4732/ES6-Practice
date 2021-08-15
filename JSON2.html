@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>jason</h1>
+<h3>jason place holder</h3>
+
+<ul id="ulID">
+   <input id="text" type="text" placeholder="title">
+   <br>
+   <input id="discription" type="text" placeholder="discription">
+   <br>
+   <button id="submit" type="submit">submit</button>
+</ul>
+
+
+
+
+
+
+
+<script>
+
+
+   
+
+
+document.getElementById("submit").addEventListener("click", function(){
+    let text=document.getElementById("text").value;
+    let discription=document.getElementById("discription").value;
+    let post ={title:text,body:discription};
+    postData(post);
+
+})
+
+
+
+function postData(information){
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify(information),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+}
+
+
+
+
+
+  
+
+function display(x){
+
+    const userName =x.map(uesr => uesr.username);
+    const ul =document.getElementById("ulID");
+    for (let i = 0; i < userName.length; i++) {
+        const element = userName[i];
+        const li =document.createElement("li");
+        li.innerText=element;
+       ul.appendChild(li)
+
+        
+    }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

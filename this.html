@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <p onclick="this.innerText = 'i am online'">this is not confused anymore </p>
+
+    <script>
+        const firstParson ={
+            name:"kodus ali",
+            getFullName:function(){
+                console.log(this);
+
+                let result ="Mr"+this.name;
+            }
+        }
+
+
+const lastParson ={
+    name :"alamin"
+}
+
+
+lastParson.getFullName=firstParson.getFullName;
+console.log(lastParson.getFullName);
+
+
+
+firstParson.getFullName();
+lastParson.getFullName();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

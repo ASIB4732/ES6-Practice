@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<ul id="ul">
+    <li>xxx</li>
+</ul>
+
+
+<script>
+    function num(){
+        fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(data => display(data))
+    }
+    num();
+   function display(data){
+       const parantNOde=document.getElementById("ul");
+       for (let i = 0; i < data.length; i++) {
+           const element = data[i];
+           const user =document.createElement("li");
+           user.innerText=element.name;
+           parantNOde.appendChild(user);
+           
+       }
+   }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
